@@ -9,15 +9,15 @@ const server = http.createServer(app);
 const io = new Server(server)
 
 
-// socket connections
 
+// socket connection 
 io.on('connection',(socket)=>{
    socket.on('send', (userMsg) =>{
       io.emit('userMsg',userMsg)
    })
 })
 
-
+// frontend connection 
 app.use(express.static(path.resolve('./public')))
 app.get('/',(req,res)=>{
    return res.sendFile("/public/index.html")
@@ -25,6 +25,6 @@ app.get('/',(req,res)=>{
 
 
 
-
+// port listen
 const port = 9090;
 server.listen(port,()=>console.log(`Listening port at ${port}`))
