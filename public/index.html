@@ -12,9 +12,10 @@
     <input type="text" id="massege" placeholder="Enter a massege"/>
     <button id="sendBtn">Send massege</button>
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script> // socket connection from backend
     <script>
-        const socket = io();
+        const socket = io(); // io connection 
+        // connection with two user
         const sendBtn = document.getElementById("sendBtn");
         const massege = document.getElementById("massege");
 
