@@ -14,19 +14,18 @@
 
     <script src="/socket.io/socket.io.js"></script> // socket connection from backend
     <script>
-        const socket = io(); // io connection 
-        // connection with two user
+        const socket = io(); // io connection with client
         const sendBtn = document.getElementById("sendBtn");
         const massege = document.getElementById("massege");
 
         sendBtn.addEventListener("click", (e)=>{
             const msgVal = massege.value;
             console.log(msgVal);
-            socket.emit('send',msgVal);
+            socket.emit('send',msgVal); //  emit :- send msg to all connection
             massege.value = "";
         });
 
-        socket.on('userMsg',(massege)=>{
+        socket.on('userMsg',(massege)=>{ // on :- get msg from all connection
             console.log(massege);
             const p =document.createElement('p');
             p.textContent = massege;
