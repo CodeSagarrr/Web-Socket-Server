@@ -27,4 +27,5 @@ app.get('/',(req,res)=>{
 
 // port listen
 const port = 9090;
+// server listen
 server.listen(port,()=>console.log(`Listening port at ${port}`))
