@@ -10,7 +10,7 @@ const io = new Server(server)
 
 
 
-// socket connection 
+// socket connection with server
 io.on('connection',(socket)=>{
    socket.on('send', (userMsg) =>{
       io.emit('userMsg',userMsg)
